@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Contact</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Unicat project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="styles/contact.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+</head>
+
+<body>
+
+	<div class="super_container">
+
+		<!-- Modal register & signup-->
+		<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+			aria-hidden="true">
+
+			<div class="modal-dialog modal-lg">
+
+				<div class="modal-content">
+
+					<div id="loginbox" style="margin-top:40px;" class=" col-lg-6">
+						<h3 class="feature_title">Sign In</h3>
+						<div style="padding-top:30px">
+
+							<div style="display:none" id="login-alert" class="alert alert-danger"></div>
+
+							<form action="employees_portfolio.html" method="POST" id="loginform" class="form-horizontal"
+								role="form">
+
+								<div style="margin-bottom: 25px" class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input id="login-mobile" type="text" class="form-control" name="login_mobile"
+										value="" placeholder="enter registered mobile number" required />
+								</div>
+
+								<div style="margin-bottom: 25px" class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+									<input id="login-password" type="password" class="form-control"
+										name="login_password" placeholder="password" required />
+								</div>
+
+
+
+								<div class="input-group">
+									<div class="checkbox">
+										<label>
+											<input id="login-remember" type="checkbox" name="remember" value="1" />
+											Remember me
+										</label>
+									</div>
+								</div>
+
+
+								<div style="margin-top:10px" class="form-group">
+
+									<div class="col-sm-12 controls">
+										<button type="submit" name="login_btn" id="btn-login" href="#"
+											class="btn btn-success">Login </button>
+										<div style="float:right; font-size: 80%;"><a href="#"
+												style="text-decoration: none; color: hsl(12, 99%, 39%) !important; "
+												onClick="$('#loginbox').hide(); $('#forgetbox').show()">
+												Forgot password?</a></div>
+									</div>
+								</div>
+							</form>
+							<div class="form-group">
+								<div class="col-md-12 control">
+									<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+										Don't have an account!
+										<a href="#" style="text-decoration: none; color: hsl(12, 99%, 39%) !important; "
+											onClick="$('#loginbox').hide(); $('#signupbox').show()">
+											Sign Up Here
+										</a>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+					<div id="signupbox" style="display:none; margin-top:40px" class="mainbox col-lg-6 ">
+						<div class="panel panel-info">
+
+							<h3 class="feature_title">Sign Up</h3>
+
+							<div style="padding-top:30px" class="panel-body">
+								<form action="employees_register.html" id="signupform" class="form-horizontal"
+									role="form">
+
+									<div id="signupalert" style="display:none" class="alert alert-danger">
+										<p>Error:</p>
+										<span></span>
+									</div>
+
+									<div class="form-group">
+										<div style="margin-bottom: 25px" class="input-group">
+
+											<select name="field" class="custom-select select-btn1" required>
+												<option value="" selected disabled hidden><b>Field
+														Category</b>
+												</option>
+												<option>Talent/art</option>
+												<option>Passion/work</option>
+												<option>Product/shop</option>
+												<option>Freelancer/youth</option>
+											</select>
+											<p>&nbsp;</p>
+											<select name="area" class="custom-select select-btn2" required>
+												<option value="" selected disabled hidden>Select domain
+												</option>
+												<option>First select field</option>
+											</select>
+
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div style="margin-bottom: 25px" class="input-group">
+											<span class="input-group-addon"><i
+													class="glyphicon glyphicon-lock"></i></span>
+											<input id="signup-name" type="text" class="form-control" name="signup_name"
+												placeholder="first and last name" required>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div style="margin-bottom: 25px" class="input-group">
+											<span class="input-group-addon"><i
+													class="glyphicon glyphicon-lock"></i></span>
+											<input id="signup-number" type="number" class="form-control"
+												name="signup_number" placeholder="valid mobile number" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<div style="margin-bottom: 25px" class="input-group">
+											<span class="input-group-addon"><i
+													class="glyphicon glyphicon-lock"></i></span>
+											<input id="login-password" type="password" class="form-control"
+												name="login_password" placeholder="password" required>
+										</div>
+									</div>
+
+									<div class="form-group">
+
+										<label for="icode" class="control-label">Otp Code</label>
+
+										<input type="number" name="signup_otp" placeholder="check msg on mobile">
+										<a id="btn-login" href="#" class="btn btn-success">verify</a>
+									</div>
+
+									<div class="form-group">
+										<!-- Button -->
+
+										<button type="submit" name="signup_btn" id="btn-signup" href="#"
+											class="btn btn-success">signup</button>
+
+									</div>
+
+
+									<div class="form-group">
+										<div class="col-md-12 control">
+											<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+												Have an account!
+												<a href="#"
+													style="text-decoration: none; color: hsl(12, 99%, 39%) !important; "
+													onClick="$('#signupbox').hide(); $('#loginbox').show()">
+													Sign In Here
+												</a>
+											</div>
+										</div>
+									</div>
+
+								</form>
+							</div>
+						</div>
+
+					</div>
+					<div id="forgetbox" style="display:none; margin-top:40px" class="mainbox col-lg-6">
+
+						<h3 class="feature_title">Forget password</h3>
+
+
+						<div style="padding-top:30px" class="panel-body">
+
+							<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+							<form id="loginform" class="form-horizontal" role="form">
+
+								<div style="margin-bottom: 25px" class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input id="login-mobile" type="text" class="form-control" name="login_mobile"
+										value="" placeholder="enter registered mobile number" required>
+								</div>
+
+
+								<div style="margin-top:10px" class="form-group">
+									<!-- Button -->
+
+									<div class="col-sm-12 controls">
+										<button type="submit" name="login_btn" id="btn-login" href="#"
+											class="btn btn-success">Send </button>
+
+									</div>
+								</div>
+
+							
+							</form>
+
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Header -->
+
+		<header class="header">
+
+			<!-- Top Bar -->
+			<div class="top_bar">
+				<div class="top_bar_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+									<ul class="top_bar_contact_list">
+										<li>
+											<div class="question">Have any questions?</div>
+										</li>
+										<li>
+											<i class="fa fa-phone" aria-hidden="true"></i>
+											<div>+(91) 8952834418</div>
+										</li>
+										<li>
+											<i class="fa fa-envelope-o" aria-hidden="true"></i>
+											<div>info.deercreative@gmail.com</div>
+										</li>
+										<li>
+											<div id="google_translate_element"></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Header Content -->
+			<div class="header_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_content d-flex flex-row align-items-center justify-content-start">
+								<div class="logo_container">
+									<a href="#">
+										<!--div class="logo_text">Namaste<span>Sir</span></div-->
+										<img src="images/logo.png" height="250px" width="250px">
+									</a>
+								</div>
+								<nav class="main_nav_contaner ml-auto">
+									<ul class="main_nav">
+										<li><a href="index.html">Home</a></li>
+										<li><a href="about.html">About</a></li>
+										<li  class="active"><a href="contact.html">Contact</a></li>
+										<li>
+											<div class="header_button trans_200"><a data-toggle="modal" data-target="#myModal"
+												style="cursor:pointer">Register or Login</a></div>
+										</li>
+									</ul>
+									<!-- Hamburger -->
+
+
+									<div class="hamburger menu_mm">
+										<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+									</div>
+								</nav>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+		</header>
+
+		<!-- Menu -->
+
+		<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+			<div class="menu_close_container">
+				<div class="menu_close">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<nav class="menu_nav">
+				<ul class="menu_mm">
+					<li>
+						<div id="google_translate_element"></div>
+					</li>
+					<li class="menu_mm"><a href="index.html">Home</a></li>
+					<li class="menu_mm"><a href="about.html">About</a></li>
+					<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				</ul>
+				<div class="top_bar_login ml-auto">
+					<!-- Trigger the modal with a button -->
+					<div class="login_button_mobile"><a data-toggle="modal" data-target="#myModal"
+							style="cursor:pointer">Register or Login</a></div>
+				</div>
+			</nav>
+		</div>
+
+		<!-- Home -->
+
+		<div class="home">
+			<div class="breadcrumbs_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="breadcrumbs">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li>Contact</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Contact -->
+
+		<div class="contact">
+
+			<div class="feature_background" style="background-image:url(images/courses_background.jpg)"></div>
+
+			<!-- Contact Info -->
+
+			<div class="contact_info_container">
+				<div class="container">
+					<div class="row">
+
+						<!-- Contact Form -->
+						<div class="col-lg-6">
+							<div class="contact_form">
+								<div class="contact_info_title">Contact Form</div>
+								<form action="#" class="comment_form">
+									<div>
+										<div class="form_title">Name</div>
+										<input type="text" class="comment_input" required="required">
+									</div>
+									<div>
+										<div class="form_title">Email</div>
+										<input type="text" class="comment_input" required="required">
+									</div>
+									<div>
+										<div class="form_title">Message</div>
+										<textarea class="comment_input comment_textarea" required="required"></textarea>
+									</div>
+									<div>
+										<button type="submit" class="comment_button trans_200">submit now</button>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<!-- Contact Info -->
+						<div class="col-lg-6">
+							<div class="contact_info">
+								<div class="contact_info_title">Contact Info</div>
+								<div class="contact_info_text">
+									<h4>
+										We operate in an industry built on trust. This can only be achieved through
+										communication and experienced support – from the first contact past your
+										ten-year anniversary.
+									</h4>
+									<br>
+									<p>You're not going to hit a ridiculously long phone menu when you call us.
+										Your email isn't going to the inbox abyss, never to be seen or heard from again.
+										At Choice Screening, we provide the exceptional service we'd want to experience
+										ourselves!</p>
+
+								</div>
+								<div class="contact_info_location">
+									<div class="contact_info_location_title">New York Office</div>
+									<ul class="location_list">
+										<li>T8/480 Collins St, Melbourne VIC 3000, New York</li>
+										<li>1-234-567-89011</li>
+										<li>info.deercreative@gmail.com</li>
+									</ul>
+								</div>
+								<div class="contact_info_location">
+									<div class="contact_info_location_title">Australia Office</div>
+									<ul class="location_list">
+										<li>Forrest Ray, 191-103 Integer Rd, Corona Australia</li>
+										<li>1-234-567-89011</li>
+										<li>info.deercreative@gmail.com</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Footer -->
+
+		<footer class="footer">
+			<div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
+			<div class="container">
+				<div class="row footer_row">
+					<div class="col">
+						<div class="footer_content">
+							<div class="row">
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer About -->
+									<div class="footer_section footer_about">
+										<div class="footer_logo_container">
+											<a href="#">
+												<div class="footer_logo_text">Namaste<span>Sir</span></div>
+											</a>
+										</div>
+										<div class="footer_about_text">
+											<p>World leading online job finding website
+												at your city.
+											</p>
+										</div>
+										<div class="footer_social">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer Contact -->
+									<div class="footer_section footer_contact">
+										<div class="footer_title">Contact Us</div>
+										<div class="footer_contact_info">
+											<ul>
+												<li>Email: nitin@namastesir.com</li>
+												<li>Phone: +(91) 8952834418</li>
+												<li>Poornima hostel gurushikhar sitpura jaipur</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer links -->
+									<div class="footer_section footer_links">
+										<div class="footer_title">Contact Us</div>
+										<div class="footer_links_container">
+											<ul>
+												<li><a href="index.html">Home</a></li>
+												<li><a href="about.html">About</a></li>
+												<li><a href="contact.html">Contact</a></li>
+												<li><a href="#">FAQs</a></li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col clearfix">
+
+									<!-- Footer links -->
+									<div class="footer_section footer_mobile">
+										<div class="footer_title">Mobile</div>
+										<div class="footer_mobile_content">
+											<div class="footer_image"><a href="#"><img src="images/mobile_1.png"
+														alt=""></a></div>
+											<div class="footer_image"><a href="#"><img src="images/mobile_2.png"
+														alt=""></a></div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row copyright_row">
+					<div class="col">
+						<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
+							<div class="cr_text">
+								Copyright &copy; 2019 All rights reserved | This website is develop by <i
+									class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+									target="_blank">Elysian company</a>
+							</div>
+							<div class="ml-lg-auto cr_links">
+								<ul class="cr_list">
+									<li><a href="#">Copyright notification</a></li>
+									<li><a href="#">Terms of Use</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	</div>
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+	<script src="plugins/marker_with_label/marker_with_label.js"></script>
+	<script src="js/contact.js"></script>
+	<!--
+	<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+	<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+-->
+</body>
+
+</html>

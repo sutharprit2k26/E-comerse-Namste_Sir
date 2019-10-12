@@ -1,0 +1,35 @@
+shopping_cart
+blod_single.html ko employees register page bnana hain
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+dropdown_item_select
+index.html -> menu google language select not visible
+
+
+
+blue #14bdee = bagni hsl(12, 99%, 39%); -> rgb(175,33,47);
+white #FFFFFF = blue rgb(9, 149, 231);	-> rgb(100, 174, 243);
+
+
+<form action="forms/profile.html" methof="POST" id="signupform" class="form-horizontal" role="form" enctype="multipart/form-data"></form>
+									
+									<div style="margin-bottom: 25px" class="input-group">
+										<select name="field" id="field" class="custom-select select-btn1" required></select>
+										<select name="domain" id="domain" class="custom-select select-btn1">
+											<option value="" selected disabled hidden><b>Select Field</b>
+											</option>
+										</select>
+									</div>
+
+									<div style="margin-bottom: 25px" class="form-group">
+										<label>Verify number: </label>
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-user"
+													aria-hidden="true"></i></span>
+											<input type="text" name="otp" class="form-control" value=""
+												placeholder="enter otp here" />
+												<button type="submit" name="verify_otp" id="btn-verify"
+												class="btn btn-info ml-auto">Verify Otp
+											</button>
+										</div>
+									</div>
+								</form>

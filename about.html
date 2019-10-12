@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>About</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Unicat project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" type="text/css" href="styles/about.css">
+	<link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
+</head>
+
+<body>
+
+	<div class="super_container">
+
+		<!-- Modal register & signup-->
+		<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+			aria-hidden="true">
+
+			<div class="modal-dialog modal-lg">
+
+				<div class="modal-content">
+
+					<div id="loginbox" style="margin-top:40px;" class=" col-lg-6">
+						<h3 class="feature_title">Sign In</h3>
+						<div style="padding-top:30px">
+
+							<div style="display:none" id="login-alert" class="alert alert-danger"></div>
+
+							<form action="employees_portfolio.html" method="POST" id="loginform" class="form-horizontal"
+								role="form">
+
+								<div style="margin-bottom: 25px" class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input id="login-mobile" type="text" class="form-control" name="login_mobile"
+										value="" placeholder="enter registered mobile number" required />
+								</div>
+
+								<div style="margin-bottom: 25px" class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+									<input id="login-password" type="password" class="form-control"
+										name="login_password" placeholder="password" required />
+								</div>
+
+
+
+								<div class="input-group">
+									<div class="checkbox">
+										<label>
+											<input id="login-remember" type="checkbox" name="remember" value="1" />
+											Remember me
+										</label>
+									</div>
+								</div>
+
+
+								<div style="margin-top:10px" class="form-group">
+
+									<div class="col-sm-12 controls">
+										<button type="submit" name="login_btn" id="btn-login" href="#"
+											class="btn btn-success">Login </button>
+										<div style="float:right; font-size: 80%;"><a href="#"
+												style="text-decoration: none; color: hsl(12, 99%, 39%) !important; "
+												onClick="$('#loginbox').hide(); $('#forgetbox').show()">
+												Forgot password?</a></div>
+									</div>
+								</div>
+							</form>
+							<div class="form-group">
+								<div class="col-md-12 control">
+									<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+										Don't have an account!
+										<a href="#" style="text-decoration: none; color: hsl(12, 99%, 39%) !important; "
+											onClick="$('#loginbox').hide(); $('#signupbox').show()">
+											Sign Up Here
+										</a>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+					<div id="signupbox" style="display:none; margin-top:40px" class="mainbox col-lg-6 ">
+						<div class="panel panel-info">
+
+							<h3 class="feature_title">Sign Up</h3>
+
+							<div style="padding-top:30px" class="panel-body">
+								<form action="employees_register.html" id="signupform" class="form-horizontal"
+									role="form">
+
+									<div id="signupalert" style="display:none" class="alert alert-danger">
+										<p>Error:</p>
+										<span></span>
+									</div>
+
+									<div class="form-group">
+										<div style="margin-bottom: 25px" class="input-group">
+
+											<select name="field" class="custom-select select-btn1" required>
+												<option value="" selected disabled hidden><b>Field
+														Category</b>
+												</option>
+												<option>Talent/art</option>
+												<option>Passion/work</option>
+												<option>Product/shop</option>
+												<option>Freelancer/youth</option>
+											</select>
+											<p>&nbsp;</p>
+											<select name="area" class="custom-select select-btn2" required>
+												<option value="" selected disabled hidden>Select domain
+												</option>
+												<option>First select field</option>
+											</select>
+
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div style="margin-bottom: 25px" class="input-group">
+											<span class="input-group-addon"><i
+													class="glyphicon glyphicon-lock"></i></span>
+											<input id="signup-name" type="text" class="form-control" name="signup_name"
+												placeholder="first and last name" required>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div style="margin-bottom: 25px" class="input-group">
+											<span class="input-group-addon"><i
+													class="glyphicon glyphicon-lock"></i></span>
+											<input id="signup-number" type="number" class="form-control"
+												name="signup_number" placeholder="valid mobile number" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<div style="margin-bottom: 25px" class="input-group">
+											<span class="input-group-addon"><i
+													class="glyphicon glyphicon-lock"></i></span>
+											<input id="login-password" type="password" class="form-control"
+												name="login_password" placeholder="password" required>
+										</div>
+									</div>
+
+									<div class="form-group">
+
+										<label for="icode" class="control-label">Otp Code</label>
+
+										<input type="number" name="signup_otp" placeholder="check msg on mobile">
+										<a id="btn-login" href="#" class="btn btn-success">verify</a>
+									</div>
+
+									<div class="form-group">
+										<!-- Button -->
+
+										<button type="submit" name="signup_btn" id="btn-signup" href="#"
+											class="btn btn-success">signup</button>
+
+									</div>
+
+
+									<div class="form-group">
+										<div class="col-md-12 control">
+											<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+												Have an account!
+												<a href="#"
+													style="text-decoration: none; color: hsl(12, 99%, 39%) !important; "
+													onClick="$('#signupbox').hide(); $('#loginbox').show()">
+													Sign In Here
+												</a>
+											</div>
+										</div>
+									</div>
+
+								</form>
+							</div>
+						</div>
+
+					</div>
+					<div id="forgetbox" style="display:none; margin-top:40px" class="mainbox col-lg-6">
+
+						<h3 class="feature_title">Forget password</h3>
+
+
+						<div style="padding-top:30px" class="panel-body">
+
+							<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+							<form id="loginform" class="form-horizontal" role="form">
+
+								<div style="margin-bottom: 25px" class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input id="login-mobile" type="text" class="form-control" name="login_mobile"
+										value="" placeholder="enter registered mobile number" required>
+								</div>
+
+
+								<div style="margin-top:10px" class="form-group">
+									<!-- Button -->
+
+									<div class="col-sm-12 controls">
+										<button type="submit" name="login_btn" id="btn-login" href="#"
+											class="btn btn-success">Send </button>
+
+									</div>
+								</div>
+
+							
+							</form>
+
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Header -->
+
+		<header class="header">
+
+			<!-- Top Bar -->
+			<div class="top_bar">
+				<div class="top_bar_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+									<ul class="top_bar_contact_list">
+										<li>
+											<div class="question">Have any questions?</div>
+										</li>
+										<li>
+											<i class="fa fa-phone" aria-hidden="true"></i>
+											<div>+(91) 8952834418</div>
+										</li>
+										<li>
+											<i class="fa fa-envelope-o" aria-hidden="true"></i>
+											<div>info.deercreative@gmail.com</div>
+										</li>
+										<li>
+											<div id="google_translate_element"></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Header Content -->
+			<div class="header_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_content d-flex flex-row align-items-center justify-content-start">
+								<div class="logo_container">
+									<a href="#">
+										<!--div class="logo_text">Namaste<span>Sir</span></div-->
+										<img src="images/logo.png" height="250px" width="250px">
+									</a>
+								</div>
+								<nav class="main_nav_contaner ml-auto">
+									<ul class="main_nav">
+										<li><a href="index.html">Home</a></li>
+										<li  class="active"><a href="about.html">About</a></li>
+										<li><a href="contact.html">Contact</a></li>
+										<li>
+											<div class="header_button trans_200"><a data-toggle="modal" data-target="#myModal"
+												style="cursor:pointer">Register or Login</a></div>
+										</li>
+									</ul>
+									<!-- Hamburger -->
+
+
+									<div class="hamburger menu_mm">
+										<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+									</div>
+								</nav>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		
+		</header>
+
+		<!-- Menu -->
+
+		<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+			<div class="menu_close_container">
+				<div class="menu_close">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<nav class="menu_nav">
+				<ul class="menu_mm">
+					<li>
+						<div id="google_translate_element"></div>
+					</li>
+					<li class="menu_mm"><a href="index.html">Home</a></li>
+					<li class="menu_mm"><a href="about.html">About</a></li>
+					<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				</ul>
+				<div class="top_bar_login ml-auto">
+					<!-- Trigger the modal with a button -->
+					<div class="login_button_mobile"><a data-toggle="modal" data-target="#myModal"
+							style="cursor:pointer">Register or Login</a></div>
+				</div>
+			</nav>
+		</div>
+
+		<!-- Home -->
+
+		<div class="home">
+			<div class="breadcrumbs_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="breadcrumbs">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li>About</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Feature -->
+
+		<div class="feature">
+			<div class="feature_background" style="background-image:url(images/courses_background.jpg)"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="section_title_container text-center">
+							<h2 class="section_title">Why Choose Us</h2>
+							<div class="section_subtitle">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel gravida arcu.
+									Vestibulum feugiat, sapien ultrices fermentum congue, quam velit venenatis sem</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row feature_row">
+
+					<!-- Feature Content -->
+					<div class="col-lg-6 feature_col">
+						<div class="feature_content">
+							<!-- Accordions -->
+							<div class="accordions">
+
+								<div class="elements_accordions">
+
+									<div class="accordion_container">
+										<div class="accordion d-flex flex-row align-items-center">
+											<div>We encourage our employees to go global.</div>
+										</div>
+										<div class="accordion_panel">
+											<p>We always encourage people to get out there, travel the world, experience new people, experience new culture. What happens is that helps you to grow and be your best self.
+</p>
+										</div>
+									</div>
+
+									<div class="accordion_container">
+										<div class="accordion d-flex flex-row align-items-center">
+											<div>Award for Best Freelancing website</div>
+										</div>
+										<div class="accordion_panel">
+											<p>We are certied company and work under the need of our customer</p>
+										</div>
+									</div>
+
+									<div class="accordion_container">
+										<div class="accordion d-flex flex-row align-items-center active">
+											<div>We’re working for the best.</div>
+										</div>
+										<div class="accordion_panel">
+											<p>We feel that your job is to create an atmosphere where creative people can do their best work.</p>
+										</div>
+									</div>
+
+									<div class="accordion_container">
+										<div class="accordion d-flex flex-row align-items-center">
+											<div>Our employees are recognized worldwide.</div>
+										</div>
+										<div class="accordion_panel">
+											<p>We are shaped by our thoughts; we become what we think. When the mind is pure, joy follows like a shadow that never leaves.</p>
+										</div>
+									</div>
+
+
+
+								</div>
+
+							</div>
+							<!-- Accordions End -->
+						</div>
+					</div>
+
+					<!-- Feature Video -->
+					<div class="col-lg-6 feature_col">
+						<div class="feature_video d-flex flex-column align-items-center justify-content-center">
+							<div class="feature_video_background" style="background-image:url(images/video.jpg)"></div>
+							<a class="vimeo feature_video_button" href="https://player.vimeo.com/video/99340873?title=0"
+								title="OH, PORTUGAL - IN 4K - Basti Hansen - Stock Footage">
+								<img src="images/play.png" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- About -->
+
+		<div class="about">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+
+						<div class="section_title_container text-center">
+							<h2 class="section_title">Welcome To NamsteSir</h2>
+							<div class="section_subtitle">
+								<p>A online platform where employeer, common people can easily find
+									employees category wise
+									at your door without any hustle !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row about_row">
+
+					<!-- About Item -->
+					<div class="col-lg-4 about_col about_col_left">
+						<div class="about_item">
+							<div class="about_item_image"><img src="images/og.jpg" alt=""></div>
+							<div class="about_item_title"><a href="#">Our Goal</a></div>
+							<div class="about_item_text">
+								<p>There isn't any "goal" of becoming a professional in your field, it is a choice based
+									on your situation,
+									your location and your skills. "Goal" of freelancing isn't better than "goal" of
+									full-time job.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- About Item -->
+					<div class="col-lg-4 about_col about_col_middle">
+						<div class="about_item">
+							<div class="about_item_image"><img src="images/om.jpg" alt=""></div>
+							<div class="about_item_title"><a href="#">Our Mission</a></div>
+							<div class="about_item_text">
+								<p>Our mission is to create a platform where employees collarate easily with employer
+									from all around
+									world and people who are more creative in the profession could find employer to sell
+									there creative talent.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- About Item -->
+					<div class="col-lg-4 about_col about_col_right">
+						<div class="about_item">
+							<div class="about_item_image"><img src="images/ov.jpg" alt=""></div>
+							<div class="about_item_title"><a href="#">Our Vision</a></div>
+							<div class="about_item_text">
+								<p>The company namstesir created the vision statement to provide their employees with a
+									clear direction
+									and gave their employees a mission to complete there dream and make money by selling
+									talent, art.
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Team -->
+
+		<div class="team">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="section_title_container text-center">
+							<h2 class="section_title">Meet With Our Best Team</h2>
+							<div class="section_subtitle">
+								<p>Coming together, sharing together, working together, succeeding together</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row team_row">
+
+					<!-- Team Item -->
+					<div class="col-lg-3 col-md-6 team_col">
+						<div class="team_item">
+							<div class="team_image"><img src="images/team_1.jpg" alt=""></div>
+							<div class="team_body">
+								<div class="team_title"><a href="#">Nitin</a></div>
+								<div class="team_subtitle">Founder & Ceo</div>
+								<div class="social_list">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Team Item -->
+					<div class="col-lg-3 col-md-6 team_col">
+						<div class="team_item">
+							<div class="team_image"><img src="images/team_2.jpg" alt=""></div>
+							<div class="team_body">
+								<div class="team_title"><a href="#">Demo text</a></div>
+								<div class="team_subtitle">Marketing & Management</div>
+								<div class="social_list">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Team Item -->
+					<div class="col-lg-3 col-md-6 team_col">
+						<div class="team_item">
+							<div class="team_image"><img src="images/team_3.jpg" alt=""></div>
+							<div class="team_body">
+								<div class="team_title"><a href="#">Demo text</a></div>
+								<div class="team_subtitle">Fund collecting</div>
+								<div class="social_list">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Team Item -->
+					<div class="col-lg-3 col-md-6 team_col">
+						<div class="team_item">
+							<div class="team_image"><img src="images/team_4.jpg" alt=""></div>
+							<div class="team_body">
+								<div class="team_title"><a href="#">Demo</a></div>
+								<div class="team_subtitle">Website</div>
+								<div class="social_list">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Partners -->
+
+		<div class="partners">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="partners_slider_container">
+							<div class="owl-carousel owl-theme partners_slider">
+
+								<!-- Partner Item -->
+								<div class="owl-item partner_item"><img src="images/partner_1.png" alt=""></div>
+
+								<!-- Partner Item -->
+								<div class="owl-item partner_item"><img src="images/partner_2.png" alt=""></div>
+
+								<!-- Partner Item -->
+								<div class="owl-item partner_item"><img src="images/partner_3.png" alt=""></div>
+
+								<!-- Partner Item -->
+								<div class="owl-item partner_item"><img src="images/partner_4.png" alt=""></div>
+
+								<!-- Partner Item -->
+								<div class="owl-item partner_item"><img src="images/partner_5.png" alt=""></div>
+
+								<!-- Partner Item -->
+								<div class="owl-item partner_item"><img src="images/partner_6.png" alt=""></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+
+		<footer class="footer">
+			<div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
+			<div class="container">
+				<div class="row footer_row">
+					<div class="col">
+						<div class="footer_content">
+							<div class="row">
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer About -->
+									<div class="footer_section footer_about">
+										<div class="footer_logo_container">
+											<a href="#">
+												<div class="footer_logo_text">Namaste<span>Sir</span></div>
+											</a>
+										</div>
+										<div class="footer_about_text">
+											<p>World leading online job finding website
+												at your city.
+											</p>
+										</div>
+										<div class="footer_social">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer Contact -->
+									<div class="footer_section footer_contact">
+										<div class="footer_title">Contact Us</div>
+										<div class="footer_contact_info">
+											<ul>
+												<li>Email: nitin@namastesir.com</li>
+												<li>Phone: +(91) 8952834418</li>
+												<li>Poornima hostel gurushikhar sitpura jaipur</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer links -->
+									<div class="footer_section footer_links">
+										<div class="footer_title">Contact Us</div>
+										<div class="footer_links_container">
+											<ul>
+												<li><a href="index.html">Home</a></li>
+												<li><a href="about.html">About</a></li>
+												<li><a href="contact.html">Contact</a></li>
+												<li><a href="#">FAQs</a></li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col clearfix">
+
+									<!-- Footer links -->
+									<div class="footer_section footer_mobile">
+										<div class="footer_title">Mobile</div>
+										<div class="footer_mobile_content">
+											<div class="footer_image"><a href="#"><img src="images/mobile_1.png"
+														alt=""></a></div>
+											<div class="footer_image"><a href="#"><img src="images/mobile_2.png"
+														alt=""></a></div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row copyright_row">
+					<div class="col">
+						<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
+							<div class="cr_text">
+								Copyright &copy; 2019 All rights reserved | This website is develop by <i
+									class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+									target="_blank">Elysian company</a>
+							</div>
+							<div class="ml-lg-auto cr_links">
+								<ul class="cr_list">
+									<li><a href="#">Copyright notification</a></li>
+									<li><a href="#">Terms of Use</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/greensock/TweenMax.min.js"></script>
+	<script src="plugins/greensock/TimelineMax.min.js"></script>
+	<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+	<script src="plugins/greensock/animation.gsap.min.js"></script>
+	<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+	<script src="js/about.js"></script>
+	<!--
+	<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+	<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+-->
+</body>
+
+</html>
